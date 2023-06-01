@@ -3,8 +3,8 @@ Codebase for the paper [Unsupervised Anomaly Detection in Medical Images Using M
 
 ## Graphical abstract
 
-<img src="Architecture.png" alt="Architecture" width="400" />
-<img src="ipm_fpm_cm_modules.png" alt="Modules" width="400" />
+<img src="Architecture.png" alt="Architecture" width="500" />
+<img src="ipm_fpm_cm_modules.png" alt="Modules" width="500" />
 
 
 ## Data
