@@ -1,0 +1,11 @@
+,img_name,age,sex,ms_type,label,img_path,mask_path,seg_path,Agegroup
+28,patient29,26,F,CIS,1,/Test/MSLUB/t1/patient29_t1.nii.gz,/Test/MSLUB/mask/patient29_mask.nii.gz,/Test/MSLUB/seg/patient29_seg.nii.gz,1.0
+14,patient15,57,F,PR,1,/Test/MSLUB/t1/patient15_t1.nii.gz,/Test/MSLUB/mask/patient15_mask.nii.gz,/Test/MSLUB/seg/patient15_seg.nii.gz,2.0
+2,patient03,37,F,,1,/Test/MSLUB/t1/patient03_t1.nii.gz,/Test/MSLUB/mask/patient03_mask.nii.gz,/Test/MSLUB/seg/patient03_seg.nii.gz,1.0
+27,patient28,39,F,RR,1,/Test/MSLUB/t1/patient28_t1.nii.gz,/Test/MSLUB/mask/patient28_mask.nii.gz,/Test/MSLUB/seg/patient28_seg.nii.gz,1.0
+19,patient20,37,F,RR,1,/Test/MSLUB/t1/patient20_t1.nii.gz,/Test/MSLUB/mask/patient20_mask.nii.gz,/Test/MSLUB/seg/patient20_seg.nii.gz,1.0
+16,patient17,27,F,RR,1,/Test/MSLUB/t1/patient17_t1.nii.gz,/Test/MSLUB/mask/patient17_mask.nii.gz,/Test/MSLUB/seg/patient17_seg.nii.gz,1.0
+21,patient22,30,F,RR,1,/Test/MSLUB/t1/patient22_t1.nii.gz,/Test/MSLUB/mask/patient22_mask.nii.gz,/Test/MSLUB/seg/patient22_seg.nii.gz,1.0
+17,patient18,60,F,RR,1,/Test/MSLUB/t1/patient18_t1.nii.gz,/Test/MSLUB/mask/patient18_mask.nii.gz,/Test/MSLUB/seg/patient18_seg.nii.gz,2.0
+0,patient01,31,F,RR,1,/Test/MSLUB/t1/patient01_t1.nii.gz,/Test/MSLUB/mask/patient01_mask.nii.gz,/Test/MSLUB/seg/patient01_seg.nii.gz,1.0
+4,patient05,33,F,RR,1,/Test/MSLUB/t1/patient05_t1.nii.gz,/Test/MSLUB/mask/patient05_mask.nii.gz,/Test/MSLUB/seg/patient05_seg.nii.gz,1.0
