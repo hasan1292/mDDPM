@@ -129,3 +129,14 @@ Execute the following command to begin the pDDPM's training and evaluation:
     python run.py experiment=mDDPM/mDDPM
 
 To execute the experiment, you must have an NVIDIA GPU with at least 16GB of RAM. 
+
+If you plan to use our work, please cite it as follows:
+
+@misc{iqbal2023unsupervised,
+      title={Unsupervised Anomaly Detection in Medical Images Using Masked Diffusion Model}, 
+      author={Hasan Iqbal and Umar Khalid and Jing Hua and Chen Chen},
+      year={2023},
+      eprint={2305.19867},
+      archivePrefix={arXiv},
+      primaryClass={eess.IV}
+}
