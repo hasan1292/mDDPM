@@ -1,0 +1,1 @@
+from src.models.LDM.modules.losses.contperceptual import LPIPSWithDiscriminator
