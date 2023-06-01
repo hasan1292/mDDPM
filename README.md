@@ -102,7 +102,7 @@ You should then specify the path the location of <DATA_DIR> in the pc_environmen
 ## Environment Set-up
 To download the code type 
 
-    git clone git@github.com:hasan1292/mDDPM.git
+    git clone https://github.com/hasan1292/mDDPM.git
 
 In your linux terminal and switch directories via
 
