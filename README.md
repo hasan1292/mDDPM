@@ -3,8 +3,9 @@ Codebase for the paper [Unsupervised Anomaly Detection in Medical Images Using M
 
 ## Graphical abstract
 
-![Architecture](Architecture.png)
-![Modules](ipm_fpm_cm_modules.png = 464x422)
+<img src="Architecture.png" alt="Architecture" width="400" />
+<img src="ipm_fpm_cm_modules.png" alt="Modules" width="400" />
+
 
 ## Data
 For our experiments, we make use of the MSLUB, BraTS21, and IXI data sets. 
