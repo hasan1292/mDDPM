@@ -1,5 +1,5 @@
 # mDDPM
-Codebase for the paper [Unsupervised Anomaly Detection in Medical Images Using Masked Diffusion Model](hhttps://arxiv.org/abs/2305.19867) paper submitted IEEE EMBS BHI 2023
+Codebase for the paper [Unsupervised Anomaly Detection in Medical Images Using Masked Diffusion Model](https://arxiv.org/abs/2305.19867) paper submitted IEEE EMBS BHI 2023
 
 ## Graphical abstract
 
