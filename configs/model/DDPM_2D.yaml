@@ -1,0 +1,41 @@
+_target_: src.models.DDPM_2D.DDPM_2D
+
+cfg:
+  name: DDPM_2D
+  ## Data 
+  imageDim: ${datamodule.cfg.imageDim} 
+  rescaleFactor: ${datamodule.cfg.rescaleFactor}
+  interRes: ${datamodule.cfg.interRes}
+  cropMode: ${datamodule.cfg.cropMode}
+  spatialDims: 2D
+  resizedEvaluation: ${datamodule.cfg.resizedEvaluation}
+
+  ## Architecture
+  unet_dim: 128
+  dim_mults: [1, 2, 2]
+  learned_variance: False
+  learned_sinusoidal_cond: False
+  
+  ## Training
+  loss: 'l1'
+  lossStrategy: 'mean'
+  lr: ${datamodule.cfg.lr}
+
+  # LR Scheduling
+  scheduleLR: False 
+  patienceLR: 10
+
+  # Early Stopping
+  earlyStopping: False 
+  patienceStopping: 50
+
+  ## Evaluation
+  saveOutputImages: True  
+  evalSeg: True
+
+  ## General postprocessing
+  pad: ${datamodule.cfg.pad}
+  erodeBrainmask: True
+  medianFiltering: True
+  threshold: auto # 'auto' for autothresholding, any number for manually setting
+  mode: ${datamodule.cfg.mode}

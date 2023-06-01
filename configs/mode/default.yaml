@@ -1,0 +1,32 @@
+# @package _global_
+
+# default running mode
+
+default_mode: True
+
+hydra:
+  # output paths for hydra logs
+  run:
+    dir: ${log_dir}/logs/runs/${name}/${model.cfg.name}_${datamodule.cfg.name}_${name}_${hydra.job.override_dirname}_${now:%Y-%m-%d}_${now:%H-%M-%S}
+  sweep:
+    dir: ${log_dir}/logs/multiruns/${name}/${now:%Y-%m-%d_%H-%M-%S}
+    subdir: ${hydra.job.num}
+
+  # you can set here environment variables that are universal for all users
+  # for system specific variables (like data paths) it's better to use .env file!
+  job:
+    name: ${model.cfg.name}_${datamodule.cfg.name}_${name}_${hydra.job.override_dirname}  # This determines the 
+    config: 
+      override_dirname: 
+        item_sep: _
+        kv_sep: "-"
+        exclude_keys: 
+          - experiment
+          - trainer.gpus
+          - load_checkpoint
+          - datamodule.cfg.resizedEvaluation 
+          - datamodule.cfg.sample_set
+          - model.cfg.encoder_path
+    env_set:
+      EXAMPLE_VAR: "example_value"
+

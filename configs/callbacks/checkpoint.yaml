@@ -1,0 +1,9 @@
+model_checkpoint:
+    _target_: pytorch_lightning.callbacks.model_checkpoint.ModelCheckpoint
+    monitor: 'val/Loss_comb'  
+    save_top_k: 1
+    auto_insert_metric_name: False
+    save_last: True
+    mode: "min"
+    dirpath: "checkpoints/"
+    filename: "epoch-{epoch}_step-{step}_loss-{val/Loss_comb:.2f}"

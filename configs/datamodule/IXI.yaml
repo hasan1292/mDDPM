@@ -1,0 +1,74 @@
+_target_: src.datamodules.Datamodules_train.IXI
+
+cfg:
+  name: IXI
+  path:
+    pathBase: ${data_dir}
+
+    IXI:
+      IDs: 
+        train: 
+          - ${data_dir}/Data/splits/IXI_train_fold0.csv
+          - ${data_dir}/Data/splits/IXI_train_fold1.csv
+          - ${data_dir}/Data/splits/IXI_train_fold2.csv
+          - ${data_dir}/Data/splits/IXI_train_fold3.csv
+          - ${data_dir}/Data/splits/IXI_train_fold4.csv
+        val: 
+          - ${data_dir}/Data/splits/IXI_val_fold0.csv
+          - ${data_dir}/Data/splits/IXI_val_fold1.csv
+          - ${data_dir}/Data/splits/IXI_val_fold2.csv
+          - ${data_dir}/Data/splits/IXI_val_fold3.csv
+          - ${data_dir}/Data/splits/IXI_val_fold4.csv
+        test: ${data_dir}/Data/splits/IXI_test.csv
+      keep_t2: ${data_dir}/Data/splits/avail_t2.csv
+
+    Brats21:
+      IDs: 
+        test: ${data_dir}/Data/splits/Brats21_test.csv
+        val: ${data_dir}/Data/splits/Brats21_val.csv
+
+    MSLUB:
+      IDs: 
+        test: ${data_dir}/Data/splits/MSLUB_test.csv
+        val: ${data_dir}/Data/splits/MSLUB_val.csv
+
+
+  imageDim: [160,192,160] 
+  rescaleFactor: 2
+  interRes: [8,8,5] #[HxWxD]
+  cropMode: 'isotropic'
+  spatialDims: ${model.cfg.spatialDims}
+  unisotropic_sampling: True
+  sample_set: False
+
+  preLoad: True
+  curvatureFlow: True
+  percentile: True
+  pad: True
+  permute: False
+
+  # Augmentations
+  randomRotate: False
+  rotateDegree: 5
+  horizontalFlip: False
+  randomBrightness: False
+  brightnessRange: (0.75,1.25)
+  randomContrast: False
+  contrastRange: (0.75,1.25)
+  
+  modelpath: ${data_dir}/Data/pretrained_2D_model/
+  num_workers: 4
+  batch_size: 32
+  lr : 0.0001
+  droplast: True
+
+
+  # Evaluation
+  mode: t1
+  resizedEvaluation: True
+  testsets: # specify which test sets to evaluate!
+  - Datamodules_eval.Brats21
+  - Datamodules_eval.MSLUB
+  - Datamodules_train.IXI
+
+

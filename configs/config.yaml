@@ -1,0 +1,54 @@
+# @package _global_
+
+# specify here default training configuration
+defaults:
+  - _self_
+  - trainer: default.yaml
+  - model: DDPM_2D.yaml
+  - datamodule: IXI.yaml
+  - callbacks: 
+    - checkpoint.yaml # set this to null if you don't want to use callbacks
+
+    
+  - logger: # set logger here or use command line (e.g. `python run.py logger=wandb`)
+    - wandb
+    - csv 
+  - experiment: DDPM.yaml # set experiment here or use command line (e.g. `python run.py experiment=DDPM`) 
+  - mode: default.yaml
+
+  # enable color logging
+  - override hydra/hydra_logging: colorlog
+  - override hydra/job_logging: colorlog
+
+# path to original working directory
+# hydra hijacks working directory by changing it to the current log directory,
+# so it's useful to have this path as a special variable
+# learn more here: https://hydra.cc/docs/next/tutorials/basic/running_your_app/working_directory
+work_dir: ${hydra:runtime.cwd}
+
+# path to folder with data 
+data_dir:  ${oc.env:DATA_DIR}
+log_dir:  ${oc.env:LOG_DIR} 
+name : ${experiment.name}
+# use `python run.py debug=true` for easy debugging!
+# this will run 1 train, val and test loop with only 1 batch
+# equivalent to running `python run.py trainer.fast_dev_run=true`
+# (this is placed here just for easier access from command line)
+debug: False
+
+# pretty print config at the start of the run using Rich library
+print_config: True
+
+# disable python warnings if they annoy you
+ignore_warnings: False
+
+# check performance on test set, using the best model achieved during training
+# lightning chooses best model based on metric specified in checkpoint callback
+test_after_training: True
+
+onlyEval: False
+new_wandb_run: False # if we want to reevaluate to a new wandb run 
+checkpoint: 'best' # which checkpoints to load
+
+
+load_checkpoint: path_to_ckpt # path to checkpoint to load

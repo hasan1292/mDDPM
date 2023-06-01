@@ -1,0 +1,42 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=example_full.yaml
+
+defaults:
+  - override /trainer: default.yaml # override trainer to null so it's not loaded from main config defaults...
+  - override /model: mDDPM.yaml
+  - override /datamodule: IXI.yaml
+datamodule:
+  cfg:
+    rescaleFactor: 2
+    imageDim: [192,192,100]
+    mode: t2 
+model:
+  cfg: 
+    test_timesteps: 500
+    dim_mults: [1,2,2]
+    unet_dim: 128
+    objective: pred_x0
+    loss: l1
+    residualmode: l1
+    OpenaiUnet: True # use openai unet
+    conv_resample: True
+    noisetype: simplex
+    dropout_unet: 0.0  
+    patch_size: 48 # size of the patches 
+    grid_boxes: True # sample boxes from a fixed grid
+    inpaint: True # solve inpainting task -- Loss calculation only for the patched region
+num_folds: 1
+logger:
+  wandb:
+    project: mDDPM
+
+ckpt_path: best 
+
+trainer:
+  max_epochs: 1600
+  precision: 32 
+
+name : mDDPM
+seed: 3141
