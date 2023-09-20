@@ -132,10 +132,12 @@ Execute the following command to begin the pDDPM's training and evaluation:
 
 To execute the experiment, you must have an NVIDIA GPU with at least 16GB of RAM. 
 
-## Acknowledged
+## Acknowledgement
 
 This code base is inpired from [pddpm-uad](https://github.com/FinnBehrendt/patched-Diffusion-Models-UAD)
 
+
+## Citation
 If you plan to use our work, please cite it as follows:
 
 @misc{iqbal2023unsupervised,
