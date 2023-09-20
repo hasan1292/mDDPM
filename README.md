@@ -134,7 +134,7 @@ To execute the experiment, you must have an NVIDIA GPU with at least 16GB of RAM
 
 ## Acknowledgement
 
-This code base is inpired from [pddpm-uad](https://github.com/FinnBehrendt/patched-Diffusion-Models-UAD)
+This code base is inspired and built-upon from [pddpm-uad](https://github.com/FinnBehrendt/patched-Diffusion-Models-UAD)
 
 
 ## Citation
